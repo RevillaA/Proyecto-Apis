@@ -22,6 +22,16 @@ Proyecto-Apis/
 
 ---
 
+## Imágenes en Docker Hub
+
+Las imágenes de los microservicios y el frontend también están disponibles públicamente en Docker Hub:
+
+-  **Products-Api**: [`antonio215/products-api`](https://hub.docker.com/r/antonio215/products-api)
+-  **Categories-Api**: [`antonio215/categories-api`](https://hub.docker.com/r/antonio215/categories-api)
+-  **Frontend Angular**: [`antonio215/front-apis`](https://hub.docker.com/r/antonio215/front-apis)
+
+---
+
 ## Requisitos
 
 - [Docker](https://www.docker.com/)
@@ -35,7 +45,6 @@ Proyecto-Apis/
 
 ```bash
 git clone https://github.com/RevillaA/Proyecto-Apis.git
-cd Proyecto-Apis
 ```
 
 ### 2. Entrar a la ruta del proyecto donde esten los archivos
@@ -58,6 +67,16 @@ Esto ejecutará los siguientes servicios:
 - **Products-Api** en: [http://localhost:8002](http://localhost:8002)
 - **Frontend Angular (Nginx)** en: [http://localhost:8084](http://localhost:8084)
 - **PhpMyAdmin** (opcional) en: [http://localhost:8003](http://localhost:8003)
+
+### 4. Acceder a la aplicación web
+
+Una vez todo esté levantado, abre tu navegador y accede a:
+
+**[http://localhost:8084](http://localhost:8084)**
+
+Desde ahí podrás probar la interfaz web que consume las APIs de productos y categorías.
+
+---
 
 ### 3. Apagar los contenedores
 
