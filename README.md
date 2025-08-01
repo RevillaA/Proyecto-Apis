@@ -26,9 +26,9 @@ Proyecto-Apis/
 
 Las imágenes de los microservicios y el frontend también están disponibles públicamente en Docker Hub:
 
--  **Products-Api**: [`antonio215/products-api`](https://hub.docker.com/r/antonio215/products-api)
--  **Categories-Api**: [`antonio215/categories-api`](https://hub.docker.com/r/antonio215/categories-api)
--  **Frontend Angular**: [`antonio215/front-apis`](https://hub.docker.com/r/antonio215/front-apis)
+-  **Products-Api**: [`antonio215/products-api`](https://hub.docker.com/repository/docker/antonio215/products-api)
+-  **Categories-Api**: [`antonio215/categories-api`](https://hub.docker.com/repository/docker/antonio215/categories-api/general)
+-  **Frontend Angular**: [`antonio215/front-apis`](https://hub.docker.com/repository/docker/antonio215/front-apis/general)
 
 ---
 
@@ -58,7 +58,7 @@ cd Proyecto-Apis
 Ejecutar en consola el siguiente comando 
 
 ```bash
-docker-compose up --build
+docker compose up -d
 ```
 
 Esto ejecutará los siguientes servicios:
