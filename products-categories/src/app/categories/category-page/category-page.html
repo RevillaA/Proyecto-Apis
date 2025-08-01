@@ -1,0 +1,26 @@
+<button class="btn btn-success mb-3" (click)="openModalForNew()">
+  <i class="bi bi-plus-circle-fill"></i> Nueva Categoría
+</button>
+
+<div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true" #categoryModalRef>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedCategory ? 'Editar' : 'Nueva' }} Categoría</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <app-category-form
+          [categoryToEdit]="selectedCategory"
+          (categorySaved)="onCategorySaved()">
+        </app-category-form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-category-list
+  [categories]="categories"
+  (onEdit)="editCategory($event)"
+  (onDelete)="deleteCategory($event)">
+</app-category-list>

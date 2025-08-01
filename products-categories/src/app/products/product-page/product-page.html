@@ -1,0 +1,23 @@
+<button class="btn btn-success mb-3" (click)="selectedProduct = null" data-bs-toggle="modal" data-bs-target="#productModal">
+  <i class="bi bi-plus-circle-fill"></i> Nuevo Producto
+</button>
+
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedProduct ? 'Editar' : 'Nuevo' }} Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <app-product-form [productToEdit]="selectedProduct" (productSaved)="onProductSaved()"></app-product-form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-product-list
+  [products]="products"
+  (onEdit)="editProduct($event)"
+  (onDelete)="deleteProduct($event)">
+</app-product-list>

@@ -1,0 +1,49 @@
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <div class="mb-3">
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="product.name" name="name" class="form-control" required pattern="^[a-zA-Z0-9 ]+$" #name="ngModel"
+    />
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+      <div *ngIf="name.errors?.['required']">El nombre es obligatorio.</div>
+      <div *ngIf="name.errors?.['pattern']">Solo se permiten letras, números y espacios.</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Descripción:</label>
+    <input type="text" [(ngModel)]="product.description" name="description" class="form-control" required pattern="^[a-zA-Z0-9 .,]+$" #description="ngModel" />
+    <div *ngIf="description.invalid && (description.dirty || description.touched)" class="text-danger">
+      <div *ngIf="description.errors?.['required']">La descripción es obligatoria.</div>
+      <div *ngIf="description.errors?.['pattern']">
+        Solo se permiten letras, números, espacios, punto y coma.
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Precio:</label>
+    <input type="number" [(ngModel)]="product.price" name="price" class="form-control" required min="0.01" #price="ngModel"
+    />
+    <div *ngIf="price.invalid && (price.dirty || price.touched)" class="text-danger">
+      <div *ngIf="price.errors?.['required']">El precio es obligatorio.</div>
+      <div *ngIf="price.errors?.['min']">Debe ser mayor a 0.</div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Categoría:</label>
+    <select class="form-select" [(ngModel)]="product.categoryId" name="categoryId" required #categoryId="ngModel">
+      <option value="" disabled selected>Seleccione una categoría</option>
+      <option *ngFor="let cat of categories" [value]="cat.id">
+        {{ cat.name }}
+      </option>
+    </select>
+    <div *ngIf="categoryId.invalid && (categoryId.dirty || categoryId.touched)" class="text-danger">
+      La categoría es obligatoria.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+    {{ editing ? 'Actualizar' : 'Guardar' }}
+  </button>
+</form>
