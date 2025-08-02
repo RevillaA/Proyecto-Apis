@@ -1,40 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
-  <div class="container-fluid">
-    <!-- Nombre de la tienda centrado -->
-    <a class="navbar-brand mx-auto fw-bold fs-4" href="#">🛒 MiTiendaApp</a>
+<nav class="navbar pastel-navbar navbar-expand-lg shadow-sm">
+  <div class="container-fluid position-relative">
+    <div class="logo-circle mx-auto">
+      <a class="navbar-brand" href="#">TiendaMI</a>
+    </div>
 
-    <!-- Botón hamburguesa -->
     <button
-      class="navbar-toggler"
+      class="navbar-toggler ms-auto"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navContent"
       aria-controls="navContent"
       aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menú colapsable -->
-    <div class="collapse navbar-collapse justify-content-center" id="navContent">
-      <ul class="navbar-nav mb-2 mb-lg-0 gap-3">
+    <div class="collapse navbar-collapse justify-content-end" id="navContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 gap-4">
         <li class="nav-item">
           <a
             class="nav-link"
             routerLink="/products"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            title="Ver, crear o editar productos"
           >Productos</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/categories"
-            routerLinkActive="active"
-            title="Gestiona tus categorías de producto"
-          >Categorías</a>
+          <a class="nav-link" routerLink="/categories" routerLinkActive="active">Categorías</a>
         </li>
       </ul>
     </div>

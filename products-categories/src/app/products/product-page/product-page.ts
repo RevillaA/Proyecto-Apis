@@ -37,6 +37,12 @@ export class ProductPage implements OnInit {
     this.closeModal();
   }
 
+  openModalForNewProduct() {
+    this.selectedProduct = null;
+    const modal = new bootstrap.Modal(document.getElementById('productModal')!);
+    modal.show();
+  }
+
   editProduct(product: any): void {
     this.selectedProduct = product;
 
